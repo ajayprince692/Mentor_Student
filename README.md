@@ -1,0 +1,1 @@
+API for maintaining student and mentor details has been created and maintained in mongodb database.Initially, I've created and stored only name of the student and mentor but we can add other details too.

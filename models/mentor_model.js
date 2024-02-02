@@ -1,12 +1,13 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const MentorSchema = new Schema({
+const MentorSchema = new mongoose.Schema({
     name: String,
-    email: String,
-    phone: String,
-    expertise: String
-});
+    students: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student' 
+    }]
+}, { versionKey: false });
 
-const Mentor = model('Mentor', MentorSchema);
+const Mentor = mongoose.model('Mentor', MentorSchema);
 
-export default Mentor;
+export default {Mentor,MentorSchema};
